@@ -1,7 +1,7 @@
 'use strict';
 var rt = require('../');
 var should = require('should');
-var reactTemplates = require('react-templates');
+var reactTemplates = require('react-templates/src/reactTemplates');
 var gutil = require('gulp-util');
 //var fs = require('fs');
 var path = require('path');

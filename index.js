@@ -2,7 +2,7 @@
 // through2 is a thin wrapper around node transform streams
 var through = require('through2');
 var gutil = require('gulp-util');
-var rt = require('react-templates');
+var rt = require('react-templates/src/reactTemplates');
 var PluginError = gutil.PluginError;
 //var applySourceMap = require('vinyl-sourcemaps-apply');
 var path = require('path');
