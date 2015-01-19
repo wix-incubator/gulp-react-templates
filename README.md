@@ -11,6 +11,7 @@ Install package with NPM and add it to your development dependencies:
 ## Usage
 
 ```javascript
+var gulp = require('gulp');
 var rt = require('gulp-react-templates');
 
 gulp.task('rt', function() {
