@@ -4,38 +4,11 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var rt = require('react-templates');
 var PluginError = gutil.PluginError;
-//var applySourceMap = require('vinyl-sourcemaps-apply');
 var path = require('path');
 var merge = require('merge');
 
 // Consts
 var PLUGIN_NAME = 'gulp-react-templates';
-
-function prefixStream(prefixText) {
-    var stream = through();
-    stream.write(prefixText);
-
-//    var reactTemplates = require('react-templates');
-//    var conf = grunt.config.get('reactTemplates');
-////            console.log(conf);
-//    var src = conf.src || ['packages/*/src/main/**/*.rt'];
-//    var glob = require('glob');
-////        var files = glob.sync(src, {cwd: process.cwd()});
-//
-//    var files = [];
-//    src.forEach(function (s) {
-//        files = files.concat(glob.sync(s, {cwd: process.cwd()}));
-//    });
-//
-////            console.log(files);
-//
-////            options._ = this.data.src; // set positional arguments
-//    conf._ = files;
-//    var ret = reactTemplates.executeOptions(conf);
-//    return ret === 0;
-
-    return stream;
-}
 
 module.exports = function (opt) {
     function replaceExtension(filePath) {

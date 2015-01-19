@@ -1,19 +1,17 @@
 {
   "name": "gulp-react-templates",
   "version": "0.0.0",
-  "private": true,
   "main": "./index.js",
   "keywords": [
     "gulpplugin"
   ],
   "scripts": {
-    "test": "mocha",
-    "start": "node ./bin/www"
+    "test": "mocha"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
     "merge": "^1.2.0",
-    "react-templates": "^0.1.7",
+    "react-templates": "^0.1.8",
     "through2": "^0.6.1"
   },
   "devDependencies": {
