@@ -1,9 +1,16 @@
 {
   "name": "gulp-react-templates",
-  "version": "0.0.0",
+  "version": "0.0.5",
+  "description": "Gulp plugin for react-templates - Light weight templates for react -> write html get valid react code",
+  "repository": "wix/gulp-react-templates",
   "main": "./index.js",
   "keywords": [
-    "gulpplugin"
+    "gulpplugin",
+    "templates",
+    "react-templates",
+    "react",
+    "reactjs",
+    "react.js"
   ],
   "scripts": {
     "test": "mocha"
@@ -17,5 +24,10 @@
   "devDependencies": {
     "mocha": "^2.0.0",
     "should": "^4.0.4"
-  }
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
 }
