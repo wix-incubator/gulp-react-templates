@@ -1,3 +1,5 @@
+[![NPM version][npm-image]][npm-url]
+
 # gulp-react-templates
 
 > Build react-templates
@@ -28,3 +30,6 @@ gulp.task('rt', function() {
 	Select modules system (amd|commonjs|none).
 
 See more [here](https://github.com/wix/react-templates/blob/gh-pages/docs/cli.md)
+
+[npm-image]: https://img.shields.io/npm/v/gulp-react-templates.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/gulp-react-templates
