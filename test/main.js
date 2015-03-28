@@ -3,10 +3,8 @@ var rt = require('../');
 var should = require('should');
 var reactTemplates = require('react-templates');
 var gutil = require('gulp-util');
-//var fs = require('fs');
 var path = require('path');
-//var sourcemaps = require('gulp-sourcemaps');
-//var stream = require('stream');
+var merge = require('merge');
 require('mocha');
 
 var createFile = function (filepath, contents) {
@@ -23,8 +21,6 @@ describe('gulp-react-templates', function () {
     describe('rt()', function () {
         before(function () {
             this.testData = function (expected, newPath, done) {
-                console.log('' + expected + ' ' + newPath);
-
                 var newPaths = [newPath],
                     expectedSourceMap;
 
@@ -79,7 +75,6 @@ describe('gulp-react-templates', function () {
 
             rt({bare: true})
                 .on('error', function (err) {
-                    //console.log('' + err);
                     err.message.should.equal('Document should have no more than a single root element');
                     done();
                 })
@@ -93,7 +88,8 @@ describe('gulp-react-templates', function () {
             var filepath = path.resolve(__dirname, '../fixtures/b.rt');
             var contents = new Buffer('<div>Hello</div>');
             var opts = {modules: 'none'};
-            var expected = reactTemplates.convertTemplateToReact(String(contents), opts);
+            var expected = reactTemplates.convertTemplateToReact(String(contents),
+                merge(opts, {name:'bRT'}));
 
             rt(opts)
                 .on('error', done)
