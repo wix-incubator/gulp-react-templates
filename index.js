@@ -10,6 +10,10 @@ var merge = require('merge');
 // Consts
 var PLUGIN_NAME = 'gulp-react-templates';
 
+function normalizeName(name) {
+    return name.replace(/-/g, '_');
+}
+
 module.exports = function (opt) {
     function replaceExtension(filePath) {
         return filePath + '.js';
@@ -23,9 +27,8 @@ module.exports = function (opt) {
             return cb(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
         }
 
-        //console.log('rt ' + file.path);
-
         var data;
+        var filePath = file.path;
         var str = file.contents.toString('utf8');
         var dest = replaceExtension(file.path);
 
@@ -34,6 +37,11 @@ module.exports = function (opt) {
             sourceFiles: [file.relative],
             generatedFile: replaceExtension(file.relative)
         }, opt);
+
+        var shouldAddName = options.modules === 'none' && !options.name;
+        if (shouldAddName) {
+            options.name = normalizeName(path.basename(filePath, path.extname(filePath))) + 'RT';
+        }
 
         try {
             data = rt.convertTemplateToReact(str, options);
