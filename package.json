@@ -1,6 +1,6 @@
 {
   "name": "gulp-react-templates",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Gulp plugin for react-templates - Light weight templates for react -> write html get valid react code",
   "repository": "wix/gulp-react-templates",
   "main": "./index.js",
