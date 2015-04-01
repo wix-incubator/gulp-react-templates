@@ -1,3 +1,4 @@
+/*eslint-env mocha*/
 'use strict';
 var rt = require('../');
 var should = require('should');
@@ -9,7 +10,9 @@ var path = require('path');
 //var stream = require('stream');
 require('mocha');
 
-var createFile = function (filepath, contents) {
+var fixtures = path.resolve(__dirname, '../fixtures');
+
+function createFile(filepath, contents) {
     var base = path.dirname(filepath);
     return new gutil.File({
         path: filepath,
@@ -17,13 +20,13 @@ var createFile = function (filepath, contents) {
         cwd: path.dirname(base),
         contents: contents
     });
-};
+}
 
 describe('gulp-react-templates', function () {
     describe('rt()', function () {
         before(function () {
             this.testData = function (expected, newPath, done) {
-                console.log('' + expected + ' ' + newPath);
+                //console.log('' + expected + ' ' + newPath);
 
                 var newPaths = [newPath],
                     expectedSourceMap;
@@ -62,19 +65,19 @@ describe('gulp-react-templates', function () {
         });
 
         it('should concat two files', function (done) {
-            var filepath = path.resolve(__dirname, '../fixtures/a.rt');
+            var filepath = path.resolve(fixtures, 'a.rt');
             var contents = new Buffer('<div>Hello</div>');
             var opts = {modules: 'commonjs'};
             var expected = reactTemplates.convertTemplateToReact(String(contents), opts);
 
             rt(opts)
                 .on('error', done)
-                .on('data', this.testData(expected, path.resolve(__dirname, '../fixtures/a.rt.js'), done))
+                .on('data', this.testData(expected, path.resolve(fixtures, 'a.rt.js'), done))
                 .write(createFile(filepath, contents));
         });
 
         it('should emit errors correctly', function (done) {
-            var filepath = path.resolve(__dirname, '../fixtures/a.rt');
+            var filepath = path.resolve(fixtures, 'a.rt');
             var contents = new Buffer('<div /><div />');
 
             rt({bare: true})
@@ -83,7 +86,7 @@ describe('gulp-react-templates', function () {
                     err.message.should.equal('Document should have no more than a single root element');
                     done();
                 })
-                .on('data', function (newFile) {
+                .on('data', function (/*newFile*/) {
                     throw new Error('no file should have been emitted!');
                 })
                 .write(createFile(filepath, contents));
