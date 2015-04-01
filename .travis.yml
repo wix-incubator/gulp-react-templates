@@ -9,8 +9,8 @@ install:
   - npm install
 
 script:
+  - npm run lint
   - npm test
-# - grunt eslint
 
 #after_success:
 #    - npm run coveralls

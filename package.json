@@ -13,7 +13,8 @@
     "react.js"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint index.js test/main.js"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
