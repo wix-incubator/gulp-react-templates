@@ -90,15 +90,15 @@ describe('gulp-react-templates', function () {
         });
 
         it('should correctly handle modules:none', function (done) {
-            var filepath = path.resolve(__dirname, '../fixtures/b.rt');
+            var filepath = path.resolve(fixtures, 'b.rt');
             var contents = new Buffer('<div>Hello</div>');
             var opts = {modules: 'none'};
             var expected = reactTemplates.convertTemplateToReact(String(contents),
-                merge(opts, {name:'bRT'}));
+                merge(opts, {name: 'bRT'}));
 
             rt(opts)
                 .on('error', done)
-                .on('data', this.testData(expected, path.resolve(__dirname, '../fixtures/b.rt.js'), done))
+                .on('data', this.testData(expected, path.resolve(fixtures, 'b.rt.js'), done))
                 .write(createFile(filepath, contents));
         });
     });
