@@ -1,4 +1,5 @@
 [![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
 
 # gulp-react-templates
 
@@ -33,3 +34,5 @@ See more [here](https://github.com/wix/react-templates/blob/gh-pages/docs/cli.md
 
 [npm-image]: https://img.shields.io/npm/v/gulp-react-templates.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/gulp-react-templates
+[travis-image]: https://img.shields.io/travis/wix/gulp-react-templates/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/wix/gulp-react-templates
