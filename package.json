@@ -19,12 +19,12 @@
   "dependencies": {
     "gulp-util": "^3.0.0",
     "merge": "^1.2.0",
-    "react-templates": "^0.1.8",
-    "through2": "^0.6.1"
+    "react-templates": "^0.1.18",
+    "through2": "^0.6.5"
   },
   "devDependencies": {
-    "mocha": "^2.0.0",
-    "should": "^4.0.4"
+    "mocha": "^2.2.4",
+    "should": "^6.0.1"
   },
   "engines": {
     "node": ">=0.8.0",
