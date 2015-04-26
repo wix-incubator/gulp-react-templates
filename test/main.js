@@ -8,7 +8,7 @@ var path = require('path');
 var merge = require('merge');
 require('mocha');
 
-var fixtures = path.resolve(__dirname, '../fixtures');
+var fixtures = path.resolve(__dirname, './fixtures');
 
 function createFile(filepath, contents) {
     var base = path.dirname(filepath);
@@ -86,6 +86,21 @@ describe('gulp-react-templates', function () {
                 .on('data', function (/*newFile*/) {
                     throw new Error('no file should have been emitted!');
                 })
+                .write(createFile(filepath, contents));
+        });
+
+        it('should correctly handle modules:none2', function (done) {
+            var filepath = path.resolve(fixtures, 'err2.rt');
+            var fs = require('fs');
+            var contents = fs.readFileSync(filepath);
+            //var contents = new Buffer('<div>Hello</div>');
+            var opts = {modules: 'amd'};
+            var expected = reactTemplates.convertTemplateToReact(String(contents),
+                merge(opts, {name: 'bRT'}));
+
+            rt(opts)
+                .on('error', done)
+                .on('data', this.testData(expected, path.resolve(fixtures, 'err2.rt.js'), done))
                 .write(createFile(filepath, contents));
         });
 
