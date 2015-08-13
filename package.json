@@ -19,7 +19,7 @@
   "dependencies": {
     "gulp-util": "^3.0.0",
     "merge": "^1.2.0",
-    "react-templates": "^0.1.18",
+    "react-templates": "^0.1.22",
     "through2": "^0.6.5"
   },
   "devDependencies": {
