@@ -28,7 +28,7 @@ gulp.task('rt', function() {
 
 - `modules`
 
-	Select modules system (amd|commonjs|none).
+	Select modules system (amd|commonjs|es6|typescript|none).
 
 See more [here](https://github.com/wix/react-templates/blob/gh-pages/docs/cli.md)
 
