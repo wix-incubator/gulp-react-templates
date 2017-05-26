@@ -1,6 +1,6 @@
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-
+__This version simply updates the react-templates version so that it works with react 15.x__
 # gulp-react-templates
 
 > Build react-templates
