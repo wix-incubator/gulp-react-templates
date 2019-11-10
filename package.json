@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
+    "eslint-config-wix-editor": "^7.3.0",
     "mocha": "^6.2.2",
     "should": "^13.1.3"
   },
