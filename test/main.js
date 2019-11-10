@@ -3,16 +3,17 @@
 var rt = require('../');
 var should = require('should');
 var reactTemplates = require('react-templates');
-var gutil = require('gulp-util');
 var path = require('path');
 var merge = require('merge');
+var Vinyl = require('vinyl');
+
 require('mocha');
 
 var fixtures = path.resolve(__dirname, './fixtures');
 
 function createFile(filepath, contents) {
     var base = path.dirname(filepath);
-    return new gutil.File({
+    return new Vinyl({
         path: filepath,
         base: base,
         cwd: path.dirname(base),

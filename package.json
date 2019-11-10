@@ -25,10 +25,12 @@
   "dependencies": {
     "gulp-util": "^3.0.7",
     "merge": "^1.2.0",
+    "plugin-error": "^1.0.1",
     "react-templates": "^0.6.1",
     "through2": "^2.0.0"
   },
   "devDependencies": {
+    "vinyl": "^2.2.0",
     "eslint": "^6.6.0",
     "eslint-config-wix-editor": "^7.3.0",
     "mocha": "^6.2.2",
