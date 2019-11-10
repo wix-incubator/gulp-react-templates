@@ -18,12 +18,12 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint index.js test/main.js",
+    "pretest": "npm run lint",
     "patch": "npm version patch -m\"update version to %s\" && git push && git push --tags",
     "minor": "npm version minor -m\"update version to %s\" && git push && git push --tags",
     "major": "npm version major -m\"update version to %s\" && git push && git push --tags"
   },
   "dependencies": {
-    "gulp-util": "^3.0.7",
     "merge": "^1.2.0",
     "plugin-error": "^1.0.1",
     "react-templates": "^0.6.1",
