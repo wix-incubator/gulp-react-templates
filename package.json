@@ -21,13 +21,16 @@
     "pretest": "npm run lint",
     "patch": "npm version patch -m\"update version to %s\" && git push && git push --tags",
     "minor": "npm version minor -m\"update version to %s\" && git push && git push --tags",
-    "major": "npm version major -m\"update version to %s\" && git push && git push --tags"
+    "major": "npm version major -m\"update version to %s\" && git push && git push --tags",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "merge": "^1.2.0",
     "plugin-error": "^1.0.1",
     "react-templates": "^0.6.1",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "vinyl": "^2.2.0",
@@ -40,5 +43,6 @@
     "node": ">=0.8.0",
     "npm": ">=1.2.10"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
